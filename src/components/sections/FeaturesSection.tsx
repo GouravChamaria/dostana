@@ -1,37 +1,37 @@
-import { Music, Image, Bell, Sparkles, Download, Share2 } from "lucide-react";
+import { Users, Lock, Heart, Clock, Sparkles, Smile } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { APP_NAME } from "@/lib/constants";
 
 const features = [
   {
-    icon: Music,
-    title: "HD Ringtones & Caller Tones",
-    description: "Set high-fidelity melodies, trending tracks, and instrumental tones as your ringtone.",
+    icon: Users,
+    title: "Verified Counsellors & Listeners",
+    description: "Connect directly with trained, compassionate professionals who provide empathetic guidance without any judgment.",
   },
   {
-    icon: Image,
-    title: "Vibrant HD & 4K Wallpapers",
-    description: "Explore thousands of stunning high-resolution wallpapers tailored for every lock screen.",
+    icon: Lock,
+    title: "100% Confidential & Secure",
+    description: "Your privacy is our utmost priority. All 1-on-1 chats and voice calls are private, safe, and anonymous.",
   },
   {
-    icon: Bell,
-    title: "Custom Alarms & Chimes",
-    description: "Wake up energized — set peaceful morning chimes, alarms, and notification sounds.",
+    icon: Clock,
+    title: "24/7 Support Whenever You Need",
+    description: "Never feel alone. Reach out to a supportive listener or counsellor anytime — day or night.",
+  },
+  {
+    icon: Heart,
+    title: "Relationship & Stress Support",
+    description: "Get guidance on personal relationships, stress management, career anxiety, and emotional clarity.",
   },
   {
     icon: Sparkles,
-    title: "Curated Playlists & Categories",
-    description: "Quickly browse by mood, genre, or popular themes with easy-to-use search and filters.",
+    title: "Guided Self-Care & Relaxation",
+    description: "Access curated mindfulness exercises, mood check-ins, and calming audio tools for daily emotional well-being.",
   },
   {
-    icon: Download,
-    title: "Fast Download & Save",
-    description: "Save your favorite audio clips and wallpapers directly to your phone storage in one click.",
-  },
-  {
-    icon: Share2,
-    title: "Share with Friends",
-    description: "Share top ringtones and wallpapers instantly to WhatsApp Status, stories, and social apps.",
+    icon: Smile,
+    title: "Empathetic AI Companion",
+    description: "Enjoy friendly, 24/7 non-judgmental conversations with an intelligent AI listener to vent and reflect.",
   },
 ];
 
@@ -40,25 +40,26 @@ const FeaturesSection = () => {
     <section id="features" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-foreground mb-4">
-            Everything You Need to Customise Your Phone
+          <span className="text-rose-600 font-semibold text-xs uppercase tracking-widest font-body">
+            Why Choose {APP_NAME}
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mt-2">
+            Empathy, Guidance & Complete Peace of Mind
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto font-body text-base">
-            {APP_NAME} brings together premium audio tones and visual wallpapers in one smooth, intuitive experience.
+          <p className="text-muted-foreground font-body text-base md:text-lg max-w-2xl mx-auto mt-4">
+            Designed to help you feel heard, supported, and empowered through life's ups and downs.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, i) => (
-            <AnimatedSection key={feature.title} delay={i * 0.1}>
-              <div className="group p-6 rounded-2xl bg-card border border-border/80 hover:border-violet-500/30 hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-6 h-6 text-violet-600" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((f, i) => (
+            <AnimatedSection key={f.title} delay={i * 0.1}>
+              <div className="bg-card rounded-2xl p-8 border border-rose-500/10 hover:border-rose-500/30 transition-all hover:shadow-lg group">
+                <div className="w-12 h-12 rounded-xl bg-rose-100/80 flex items-center justify-center mb-6 text-rose-700 group-hover:scale-110 transition-transform">
+                  <f.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-semibold font-body text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                  {feature.description}
-                </p>
+                <h3 className="text-xl font-bold font-display text-foreground mb-3">{f.title}</h3>
+                <p className="text-muted-foreground font-body text-sm leading-relaxed">{f.description}</p>
               </div>
             </AnimatedSection>
           ))}
@@ -69,5 +70,3 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
-
-

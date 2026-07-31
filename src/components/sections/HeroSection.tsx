@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Download, ChevronDown } from "lucide-react";
+import { Download, ChevronDown, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PhoneMockup from "@/components/PhoneMockup";
-import heroMockup from "@/assets/ringbook/Container-4.png";
+import heroMockup from "@/assets/dostana/AI Girlfriend App Redesign.png";
 import { PLAY_STORE_URL, APP_NAME } from "@/lib/constants";
 
 const HeroSection = () => {
@@ -23,19 +23,20 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-100/80 border border-violet-300/50 w-fit text-violet-900 font-semibold text-xs tracking-wide uppercase font-body"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-300/50 w-fit text-rose-900 font-semibold text-xs tracking-wide uppercase font-body"
             >
-              <span>✦</span> Custom Ringtones, HD Wallpapers & Alarms
+              <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-600" />
+              <span>Confidential Counselling & Emotional Wellness</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-foreground leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight"
             >
-              Personalize Your Phone,{" "}
-              <span className="text-primary">Effortlessly.</span>
+              A Safe Space for Your Feelings with{" "}
+              <span className="text-rose-600">{APP_NAME}</span>
             </motion.h1>
 
             <motion.p
@@ -44,7 +45,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-base md:text-lg text-muted-foreground max-w-lg font-body leading-relaxed"
             >
-              Discover thousands of high-definition wallpapers, custom caller ringtones, alarm tones, and sound clips — all packaged in one seamless Android app.
+              Connect with empathetic listeners and verified counsellors anytime. Express yourself freely, navigate personal challenges, and find emotional peace in complete privacy.
             </motion.p>
 
             <motion.div
@@ -54,14 +55,14 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 pt-2"
             >
               <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
-                <Button className="rounded-full bg-violet-600 hover:bg-violet-700 text-white hover:scale-[1.04] transition-transform shadow-xl px-8 py-6 text-base font-semibold">
+                <Button className="rounded-full bg-rose-600 hover:bg-rose-700 text-white hover:scale-[1.04] transition-transform shadow-xl px-8 py-6 text-base font-semibold">
                   <Download className="w-5 h-5 mr-2" />
                   Download on Google Play
                 </Button>
               </a>
               <Button
                 variant="outline"
-                className="rounded-full border-violet-600/30 text-violet-700 hover:bg-violet-600/5 px-8 py-6 text-base font-semibold"
+                className="rounded-full border-rose-600/30 text-rose-800 hover:bg-rose-50 px-8 py-6 text-base font-semibold"
                 onClick={scrollToFeatures}
               >
                 Explore Features
@@ -95,7 +96,7 @@ const HeroSection = () => {
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <button onClick={scrollToFeatures} className="text-muted-foreground/50 hover:text-primary transition-colors animate-bounce">
+        <button onClick={scrollToFeatures} className="text-muted-foreground/50 hover:text-rose-600 transition-colors animate-bounce">
           <ChevronDown className="w-6 h-6" />
         </button>
       </motion.div>
@@ -104,5 +105,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
